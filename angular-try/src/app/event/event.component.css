@@ -1,0 +1,41 @@
+.container{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px;
+    justify-content: center;
+}
+.event-form{
+    margin-bottom: 30px;
+    color: blue;
+}
+.event-form input{
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    margin: 10px;
+}
+button{
+    padding: 10px 20px;
+    background-color: #00f3f7;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: #ff00d0;
+}
+.event-list{
+    margin-top: 20px;
+}
+.event-list ul{
+    list-style-type: none;
+}
+.event-list li{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.event-list span{
+    font-weight: bold;
+}

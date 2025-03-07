@@ -1,0 +1,27 @@
+<h1>WELCOME</h1>
+<div class="container">
+    <h2>This is an Event Countdown App</h2>
+  
+    <div class="event-form">
+      <label for="eventName">Event Name:</label>
+      <input type="text" id="eventName" [(ngModel)]="eventName" placeholder="Enter event name here..." />
+      <br>
+      <label for="eventDate">Event Date:</label>
+      <input type="datetime-local" id="eventDate" [(ngModel)]="eventDate" />
+      <br>
+      <button (click)="addEvent()">Add Event</button>
+    </div>
+    <div *ngIf="events.length > 0" class="event-list">
+      <h3>Upcoming Events:</h3>
+      <ul>
+        <li *ngFor="let event of events">
+          <strong>{{ event.name }}</strong> - 
+          <span>{{ getTimeLeft(event.date) }}</span>
+        </li>
+      </ul>
+    </div>
+  
+    <div *ngIf="events.length === 0">
+      <p>Please add the events to start the countdown.</p>
+    </div>
+  </div>
