@@ -1,0 +1,27 @@
+<div *ngIf="questions.length > 0 && !isQuizOver" class="quiz-container">
+  <h2>Quiz Time! Let's play!</h2>
+
+  <div class="timer">
+    <p>Time Remaining: {{ timer }} seconds</p>
+  </div>
+
+  <div class="question">
+    <p>{{ questions[currentQuestionIndex]?.question }}</p>
+  </div>
+
+  <div class="options">
+    <button *ngFor="let option of questions[currentQuestionIndex]?.options" 
+            (click)="selectedAnswer = option" 
+            [class.selected]="selectedAnswer === option">
+      {{ option }}
+    </button>
+  </div>
+
+  <button [disabled]="!selectedAnswer" (click)="nextQuestion()">Next</button>
+</div>
+
+<div *ngIf="isQuizOver && currentQuestionIndex === questions.length" class="quiz-over">
+  <h2>Quiz Over!</h2>
+  <p>Your Score: {{ score }} out of {{ questions.length }}</p>
+  <button (click)="restartQuiz()">Restart Quiz</button>
+</div>
